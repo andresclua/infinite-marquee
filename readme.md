@@ -85,4 +85,6 @@ window.addEventListener("load", () => {
    - times - an Array of the times on the timeline where each element hits the "starting" spot. There's also a label added accordingly, so "label1" is when the 2nd element reaches the start.
  */
 
+### Link to Demo
+[Here's the demo](https://andresclua.github.io/infinite-marquee/) 
 
