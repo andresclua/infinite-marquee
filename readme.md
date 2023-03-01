@@ -86,3 +86,6 @@ window.addEventListener("load", () => {
  */
 
 
+### Link to Demo
+[Here's the demo](https://andresclua.github.io/infinite-marquee/)
+
