@@ -2,11 +2,9 @@ import gsap from 'gsap';
 
 function verticalLoop(elements, config) {
     elements = gsap.utils.toArray(elements)
-
     if (!Array.isArray(elements) || elements.length === 0) {
         return null
     }
-
     config = config || {}
     let firstBounds = elements[0].getBoundingClientRect(),
         lastBounds = elements[elements.length - 1].getBoundingClientRect()
