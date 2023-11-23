@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 
-function verticalLoop(elements, speed) {
+function verticalLoop(elements, config) {
     elements = gsap.utils.toArray(elements)
 
     if (!Array.isArray(elements) || elements.length === 0) {
