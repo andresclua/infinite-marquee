@@ -2,6 +2,12 @@
 
 This package is designed with one purpose: to create a smooth, infinite scrolling effect using GSAP. The [helper](https://gsap.com/docs/v3/HelperFunctions/helpers/seamlessLoop/) function used for the endless loop is sourced externally, while the lightweight class provided here is custom-built and can be easily integrated into your projects.
 
+### Install
+
+```bash
+npm i @andresclua/infinite-marquee-gsap
+```
+
 ### Minimal Configuration for Horizontal
 
 ``` html
@@ -46,7 +52,7 @@ This package is designed with one purpose: to create a smooth, infinite scrollin
 
 ```js
 import gsap from 'gsap';
-import { horizontalLoop } from './horizontalLoop';
+import {horizontalLoop} from '@andresclua/infinite-marquee-gsap';
 
 const colors = ["#ff0000","#6fb936", "#ccc", "#6fb936"];
 const horizontalBoxes = gsap.utils.toArray(".c--list-group-a__list-item");
@@ -109,7 +115,7 @@ const horizontalMarquee = horizontalLoop(horizontalBoxes, {repeat:-1,paused:fals
 
 ```js
 import gsap from 'gsap';
-import { verticalLoop } from './verticalLoop';
+import { verticalLoop } from '@andresclua/infinite-marquee-gsap';
 
 const colors = ["#ff0000","#6fb936", "#ccc", "#6fb936"];
 const verticalBoxes = gsap.utils.toArray(".c--list-group-b__list-item");
