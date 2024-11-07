@@ -129,8 +129,6 @@ let verticalMarquee = verticalLoop(verticalBoxes, {
 import {horizontalLoop} from '@andresclua/infinite-marquee-gsap';
 import gsap from 'gsap';
 
-// import {horizontalLoop} from './helper.js';
-// import gsap from 'gsap';
 
 /**
  * InfiniteMarquee - A JavaScript class for creating a continuous horizontal marquee effect using GSAP.
@@ -227,6 +225,4 @@ class InfiniteMarquee {
 }
 
 export default InfiniteMarquee;
-
-
 ```
