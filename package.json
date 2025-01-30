@@ -1,7 +1,7 @@
 {
   "name": "@andresclua/infinite-marquee-gsap",
   "private": false,
-  "version": "0.0.11",
+  "version": "0.0.12",
   "type": "module",
   "main":"./dist/infiniteMarquee.umd.js",
   "module": "./dist/infiniteMarquee.es.js",
