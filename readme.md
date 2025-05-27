@@ -186,6 +186,7 @@ import gsap from 'gsap';
  * @returns {InfiniteMarquee} Instance of the InfiniteMarquee class.
  */
 
+```js
 class InfiniteMarquee {
     constructor(payload){
         var { element, speed, direction, controlsOnHover } = payload;
@@ -201,13 +202,21 @@ class InfiniteMarquee {
 
     events(){
         if (this.controlsOnHover) {
-            this.DOM.element.addEventListener("mouseenter", () => gsap.to(this.loop, { timeScale: 0, overwrite: true }));
-            this.DOM.element.addEventListener("mouseleave", () => gsap.to(this.loop, { timeScale: 1, overwrite: true }));
+            this.DOM.element.addEventListener("mouseenter", () => this.loop.pause());
+            this.DOM.element.addEventListener("mouseleave", () => {
+                if (this.wasReversed) {
+                    this.loop.reverse();
+                } else {
+                    this.loop.play();
+                }
+            });
         }
     }
 
     init(){
-        const reversed = this.direction === 'right-to-left';  // Reverse the loop if the direction is right-to-left
+        const reversed = this.direction === 'right-to-left';
+        this.wasReversed = reversed;
+
         this.loop = horizontalLoop(this.DOM.element.children,  {
             paused: false,
             repeat: -1,
@@ -222,11 +231,15 @@ class InfiniteMarquee {
     }
 
     pause(){
-        gsap.to(this.loop, { timeScale: 0, overwrite: true });
+        this.loop.pause();
     }
 
     play(){
-        gsap.to(this.loop, { timeScale: 1, overwrite: true });
+        if (this.wasReversed) {
+            this.loop.reverse();
+        } else {
+            this.loop.play();
+        }
     }
 }
 
